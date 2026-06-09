@@ -1,0 +1,158 @@
+:root {
+    --pink-main: #FF6FAE;
+    --pink-soft: #FFB6C1;
+    --cream: #FFF1F5;
+    --dough: #F7D6B3;
+    --choco: #6B3E2E;
+  
+    --purple-sprinkle: #C084FC;
+    --mint: #A7F3D0;
+    --caramel: #F59E0B;
+  }
+  
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--cream);
+    overflow-x: hidden;
+  }
+  
+
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+  
+    z-index: 1;
+  }
+  
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    right: 60px;
+    transform: translateY(-50%);
+  
+    text-align: right;
+    color: #fff;
+  
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  
+    padding: 28px 32px;
+    border-radius: 22px;
+  
+    box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+  
+    max-width: 360px;
+  
+    z-index: 10;
+  }
+  
+
+  .hero-text h1 {
+    font-size: 70px;
+    margin: 0;
+    line-height: 1;
+    color: var(--pink-main);
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.35);
+  }
+  
+
+  .desc {
+    font-size: 15px;
+    margin-top: 15px;
+    line-height: 1.6;
+    opacity: 0.95;
+    color: #fff;
+  }
+  
+
+  .btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 26px;
+  
+    background: var(--pink-main);
+    color: white;
+  
+    text-decoration: none;
+    border-radius: 14px;
+    font-weight: bold;
+  
+    cursor: pointer;
+  
+    position: relative;
+    z-index: 999; 
+  
+    transition: 0.3s ease;
+  
+    
+    box-shadow:
+      0 0 10px rgba(255, 110, 174, 0.6),
+      0 0 20px rgba(255, 110, 174, 0.4),
+      0 0 30px rgba(255, 110, 174, 0.3);
+  }
+  
+
+  .btn:hover {
+    background: var(--pink-soft);
+    transform: scale(1.05);
+  
+    box-shadow:
+      0 0 15px rgba(255, 110, 174, 0.9),
+      0 0 30px rgba(255, 110, 174, 0.7),
+      0 0 45px rgba(255, 110, 174, 0.5);
+  }
+  
+  .fade-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, transparent, var(--cream));
+  
+    z-index: 2;
+    pointer-events: none; 
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-text {
+      right: 20px;
+      left: 20px;
+      text-align: center;
+      max-width: none;
+    }
+  
+    .hero-text h1 {
+      font-size: 50px;
+    }
+  
+    .desc {
+      font-size: 14px;
+    }
+  }
